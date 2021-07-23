@@ -35,10 +35,10 @@ const SelectedTime: React.FC<SelectedTimeProps> = ({ timeLineStart }) => {
   const {
     loading: { loading },
     event: {
-      state: { events, startTime, endTime },
+      state: { events, startTime, endTime, filter },
     },
   } = useMainContext();
-  if (loading && events.length === 0) return null;
+  if ((loading && events.length === 0) || !!filter.filterValue) return null;
 
   const left = calculateLeftValue(timeLineStart, startTime);
   const width = calculateWidthValue(startTime, endTime);

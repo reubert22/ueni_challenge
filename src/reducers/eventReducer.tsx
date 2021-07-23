@@ -48,6 +48,12 @@ export const eventReducer = (
         ...prevState,
         endTime: action.item.endTime,
       };
+    case EventReducerTypes.SET_EVENT:
+      const newEvents = [action.item, ...prevState.events];
+      return {
+        ...prevState,
+        events: newEvents as EventState["events"],
+      };
     default:
       return EventInitialState;
   }

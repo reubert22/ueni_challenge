@@ -45,6 +45,17 @@ export type EventContextType = {
       name: string;
     }[]
   ) => void;
+  setEvent: ({
+    start,
+    end,
+    id,
+    name,
+  }: {
+    start: string;
+    end: string;
+    id: string;
+    name: string;
+  }) => void;
   setFilterOptions: (options: string[]) => void;
   setFilterValue: (value: { filter: { filterValue: string | null } }) => void;
   setEndTime: (value: { endTime: DateTime }) => void;

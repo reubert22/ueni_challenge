@@ -14,6 +14,7 @@ export const MainContext = createContext<MainContextType>({
       },
     },
     setEvents: () => {},
+    setEvent: () => {},
     setFilterOptions: () => {},
     setFilterValue: () => {},
     setEndTime: () => {},

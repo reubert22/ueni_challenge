@@ -6,6 +6,7 @@ export const LoadingReducerTypes = {
 
 export const EventReducerTypes = {
   SET_EVENTS: "SET_EVENTS",
+  SET_EVENT: "SET_EVENT",
   SET_FILTER_OPTIONS: "SET_FILTER_OPTIONS",
   SET_FILTER_VALUE: "SET_FILTER_VALUE",
   SET_START_TIME: "SET_START_TIME",

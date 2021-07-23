@@ -1,5 +1,4 @@
 import { Button, FormControl, InputLabel, MenuItem } from "@material-ui/core";
-import Select from "@material-ui/core/Select";
 import { DateTime } from "luxon";
 import React, { HTMLAttributes } from "react";
 import styled from "styled-components";
@@ -7,6 +6,7 @@ import useControlsBar from "./hooks/useControlBar";
 import Datetime from "react-datetime";
 import "react-datetime/css/react-datetime.css";
 import { isEmpty } from "lodash";
+import SelectInput from "../Shared/SelectInput/SelectInput";
 
 const Root = styled.div`
   display: flex;
@@ -42,12 +42,6 @@ const Root = styled.div`
       width: 500px;
       margin-left: 1rem !important;
     }
-  }
-`;
-
-const StyledOrganizerField = styled(FormControl)`
-  && {
-    min-width: 200px;
   }
 `;
 
@@ -104,21 +98,19 @@ const ControlsBar: React.FC<ControlBarProps> = ({
         <Datetime value={end.toJSDate()} onChange={onEndChange} />
       </StyledDateTimeFormControl>
 
-      <StyledOrganizerField>
-        <InputLabel shrink>Organizer</InputLabel>
-        <Select
-          value={nameFilterValue}
-          onChange={(e) => {
-            onFilterChange(e.target.value as string);
-          }}
-        >
-          {nameFilterOptions.map((name) => (
-            <MenuItem key={name} value={name}>
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </StyledOrganizerField>
+      <SelectInput
+        label="Organizer"
+        value={nameFilterValue ?? ""}
+        onChange={(value) => {
+          onFilterChange(value);
+        }}
+      >
+        {nameFilterOptions.map((name) => (
+          <MenuItem key={name} value={name}>
+            {name}
+          </MenuItem>
+        ))}
+      </SelectInput>
 
       {!isEmpty(nameFilterValue) && (
         <StyledResetButton

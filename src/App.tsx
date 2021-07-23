@@ -21,6 +21,17 @@ const StyledControlBar = styled(ControlsBar)`
   margin: 2rem 0;
 `;
 
+const MainTitle = styled.span`
+  font-size: 22px;
+  color: #3f51b5;
+`;
+
+const SubTitle = styled.p`
+  font-size: 12px;
+  color: #4caf50;
+  margin: 0px;
+`;
+
 function App() {
   const loading = useLoading();
   const event = useEvent();
@@ -54,6 +65,10 @@ function App() {
   return (
     <MainContext.Provider value={{ loading, event }}>
       <Root className="App">
+        <MainTitle>Scheduler</MainTitle>
+        <SubTitle>
+          * Check for an available time and schedule event with a professional
+        </SubTitle>
         <StyledControlBar timeLineStart={timeLineStart} />
         <Timeline timeLineStart={timeLineStart}>
           <Loader />

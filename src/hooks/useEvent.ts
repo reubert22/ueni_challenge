@@ -16,6 +16,13 @@ export const useEvent = () => {
     });
   }, []);
 
+  const setEvent = useCallback((item) => {
+    dispatch({
+      type: EventReducerTypes.SET_EVENT,
+      item,
+    });
+  }, []);
+
   const setFilterOptions = useCallback((options) => {
     dispatch({
       type: EventReducerTypes.SET_FILTER_OPTIONS,
@@ -54,5 +61,6 @@ export const useEvent = () => {
     setFilterValue,
     setStartTime,
     setEndTime,
+    setEvent,
   };
 };
