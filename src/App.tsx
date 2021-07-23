@@ -58,13 +58,14 @@ function App() {
         <Timeline timeLineStart={timeLineStart}>
           <Loader />
           <SelectedTime timeLineStart={timeLineStart} />
-          {event.state.events.map((event: EventType) => (
-            <Event
-              item={event}
-              key={`event-${event.id}`}
-              timeLineStart={timeLineStart}
-            />
-          ))}
+          {event.state.events.length !== 0 &&
+            event.state.events.map((event: EventType) => (
+              <Event
+                item={event}
+                key={`event-${event.id}`}
+                timeLineStart={timeLineStart}
+              />
+            ))}
         </Timeline>
       </Root>
     </MainContext.Provider>

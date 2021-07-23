@@ -33,10 +33,12 @@ interface SelectedTimeProps {
 
 const SelectedTime: React.FC<SelectedTimeProps> = ({ timeLineStart }) => {
   const {
+    loading: { loading },
     event: {
       state: { events, startTime, endTime },
     },
   } = useMainContext();
+  if (loading && events.length === 0) return null;
 
   const left = calculateLeftValue(timeLineStart, startTime);
   const width = calculateWidthValue(startTime, endTime);

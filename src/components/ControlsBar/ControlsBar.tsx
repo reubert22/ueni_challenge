@@ -31,6 +31,8 @@ const Root = styled.div`
     align-items: center;
 
     div {
+      margin-bottom: 0px;
+      padding: 0px;
       input {
         width: auto;
       }
@@ -118,7 +120,7 @@ const ControlsBar: React.FC<ControlBarProps> = ({
         </Select>
       </StyledOrganizerField>
 
-      {!isEmpty(nameFilterValue) ? (
+      {!isEmpty(nameFilterValue) && (
         <StyledResetButton
           variant="contained"
           color={"primary"}
@@ -126,7 +128,7 @@ const ControlsBar: React.FC<ControlBarProps> = ({
         >
           Delete filter
         </StyledResetButton>
-      ) : null}
+      )}
     </Root>
   );
 };
