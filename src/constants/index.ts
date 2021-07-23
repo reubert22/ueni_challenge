@@ -1,1 +1,13 @@
 export const MINUTE_TO_PIXEL_RATIO = 1;
+
+export const LoadingReducerTypes = {
+  SET_LOADING: "SET_LOADING",
+};
+
+export const EventReducerTypes = {
+  SET_EVENTS: "SET_EVENTS",
+  SET_FILTER_OPTIONS: "SET_FILTER_OPTIONS",
+  SET_FILTER_VALUE: "SET_FILTER_VALUE",
+  SET_START_TIME: "SET_START_TIME",
+  SET_END_TIME: "SET_END_TIME",
+};
